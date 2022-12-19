@@ -1,7 +1,5 @@
 # Hi there 👋
-I write code for Snickers!
-<br>Linuxer
-
+Bonk!
 
 ## 🌐 Connect with me:
 <p align="left">
