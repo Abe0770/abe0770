@@ -1,4 +1,4 @@
-# 💫 About Me:
+# Hi there 👋:
 I write code for Snickers!
 
 
