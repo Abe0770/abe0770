@@ -1,53 +1,12 @@
-set -o errexit
+<h3 align="center">I write codes for Snickers!</h3>
 
-readonly ROOT_UID=0
-readonly Project_Name="GRUB2::THEMES"
-readonly MAX_DELAY=20                               # max delay for user to enter root password
-tui_root_login=
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://stackoverflow.com/users/abe0770" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="abe0770" height="30" width="40" /></a>
+<a href="https://www.codechef.com/users/abel_johnson" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/codechef.svg" alt="abel_johnson" height="30" width="40" /></a>
+<a href="https://www.leetcode.com/abeljohnson207" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="abeljohnson207" height="30" width="40" /></a>
+</p>
 
-THEME_DIR="/usr/share/grub/themes"
-REO_DIR="$(cd $(dirname $0) && pwd)"
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mathworks.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/apple_objectivec/apple_objectivec-icon.svg" alt="objectivec" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
 
-THEME_VARIANTS=('tela' 'vimix' 'stylish' 'whitesur')
-ICON_VARIANTS=('color' 'white' 'whitesur')
-SCREEN_VARIANTS=('1080p' '2k' '4k' 'ultrawide' 'ultrawide2k')
-
-#################################
-#   :::::: C O L O R S ::::::   #
-#################################
-
-CDEF=" \033[0m"                                     # default color
-CCIN=" \033[0;36m"                                  # info color
-CGSC=" \033[0;32m"                                  # success color
-CRER=" \033[0;31m"                                  # error color
-CWAR=" \033[0;33m"                                  # waring color
-b_CDEF=" \033[1;37m"                                # bold default color
-b_CCIN=" \033[1;36m"                                # bold info color
-b_CGSC=" \033[1;32m"                                # bold success color
-b_CRER=" \033[1;31m"                                # bold error color
-b_CWAR=" \033[1;33m"                                # bold warning color
-
-#######################################
-#   :::::: F U N C T I O N S ::::::   #
-#######################################
-
-# echo like ... with flag type and display message colors
-prompt () {
-  case ${1} in
-    "-s"|"--success")
-      echo -e "${b_CGSC}${@/-s/}${CDEF}";;    # print success message
-    "-e"|"--error")
-      echo -e "${b_CRER}${@/-e/}${CDEF}";;    # print error message
-    "-w"|"--warning")
-      echo -e "${b_CWAR}${@/-w/}${CDEF}";;    # print warning message
-    "-i"|"--info")
-      echo -e "${b_CCIN}${@/-i/}${CDEF}";;    # print info message
-    *)
-    echo -e "$@"
-    ;;
-  esac
-}
-
-# Check command availability
-function has_command() {
-  command -v $1 &> /d
