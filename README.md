@@ -1,22 +1,53 @@
-# Hi there 👋:
-I write code for Snickers!<br>
-Linuxer
+set -o errexit
 
+readonly ROOT_UID=0
+readonly Project_Name="GRUB2::THEMES"
+readonly MAX_DELAY=20                               # max delay for user to enter root password
+tui_root_login=
 
-## 🌐 Socials:
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/abel-johnson-297665238) [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/Abe0770) 
+THEME_DIR="/usr/share/grub/themes"
+REO_DIR="$(cd $(dirname $0) && pwd)"
 
-# 💻 Tech Stack:
-![C++]([https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white](https://e7.pngegg.com/pngimages/46/626/png-clipart-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template.png)) ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=Abe0770&theme=nightowl&hide_border=false&include_all_commits=true&count_private=true)<br/>
-![](https://github-readme-streak-stats.herokuapp.com/?user=Abe0770&theme=nightowl&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=Abe0770&theme=nightowl&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+THEME_VARIANTS=('tela' 'vimix' 'stylish' 'whitesur')
+ICON_VARIANTS=('color' 'white' 'whitesur')
+SCREEN_VARIANTS=('1080p' '2k' '4k' 'ultrawide' 'ultrawide2k')
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=Abe0770&theme=tokyonight&no-frame=false&no-bg=false&margin-w=4)
+#################################
+#   :::::: C O L O R S ::::::   #
+#################################
 
----
-[![](https://visitcount.itsvg.in/api?id=Abe0770&icon=5&color=0)](https://visitcount.itsvg.in)
+CDEF=" \033[0m"                                     # default color
+CCIN=" \033[0;36m"                                  # info color
+CGSC=" \033[0;32m"                                  # success color
+CRER=" \033[0;31m"                                  # error color
+CWAR=" \033[0;33m"                                  # waring color
+b_CDEF=" \033[1;37m"                                # bold default color
+b_CCIN=" \033[1;36m"                                # bold info color
+b_CGSC=" \033[1;32m"                                # bold success color
+b_CRER=" \033[1;31m"                                # bold error color
+b_CWAR=" \033[1;33m"                                # bold warning color
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+#######################################
+#   :::::: F U N C T I O N S ::::::   #
+#######################################
+
+# echo like ... with flag type and display message colors
+prompt () {
+  case ${1} in
+    "-s"|"--success")
+      echo -e "${b_CGSC}${@/-s/}${CDEF}";;    # print success message
+    "-e"|"--error")
+      echo -e "${b_CRER}${@/-e/}${CDEF}";;    # print error message
+    "-w"|"--warning")
+      echo -e "${b_CWAR}${@/-w/}${CDEF}";;    # print warning message
+    "-i"|"--info")
+      echo -e "${b_CCIN}${@/-i/}${CDEF}";;    # print info message
+    *)
+    echo -e "$@"
+    ;;
+  esac
+}
+
+# Check command availability
+function has_command() {
+  command -v $1 &> /d
