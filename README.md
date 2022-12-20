@@ -22,4 +22,8 @@ Bonk!
 ---
 [![](https://visitcount.itsvg.in/api?id=Abe0770&icon=5&color=0)](https://visitcount.itsvg.in)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=abe0770&show_icons=true&locale=en&layout=compact" alt="abe0770" /></p>
+
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=abe0770&show_icons=true&locale=en" alt="abe0770" /></p>
+
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=abe0770&" alt="abe0770" /></p>
