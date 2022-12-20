@@ -20,8 +20,6 @@ Bonk!
 ![](https://github-profile-trophy.vercel.app/?username=Abe0770&theme=tokyonight&no-frame=false&no-bg=false&margin-w=4)
 
 ---
-<a href="https://visitcount.itsvg.in">
-  <img src="https://visitcount.itsvg.in/api?id=Abe0770&label=57&color=0&icon=5&pretty=false" />
-</a>
+[![](https://visitcount.itsvg.in/api?id=Abe0770&label=57&color=0&icon=5&pretty=false)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
