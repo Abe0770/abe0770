@@ -1,5 +1,4 @@
 # Hello there 👋
-<img src="https://user-images.githubusercontent.com/76398370/209264977-adb30078-c403-47fd-b471-9c916e89d728.gif" width=700>
 
 ## 🌐 Connect with me:
 <p align="left">
