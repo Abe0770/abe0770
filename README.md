@@ -12,7 +12,8 @@
 
 ## 📊 GitHub Stats
 ![](https://github-readme-streak-stats.herokuapp.com/?user=Abe0770&theme=nightowl&hide_border=false)<br/>
-![Abel's GitHub stats](https://github-readme-stats.vercel.app/api?username=abe0770&show_icons=true&theme=radical)
+![Abel's GitHub stats](https://github-readme-stats.vercel.app/api?username=abe0770&show_icons=true&theme=radical)<br/>
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=abe0770&layout=compact&theme=radical)](https://github.com/abe0770/github-readme-stats)
 
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=Abe0770&theme=tokyonight&no-frame=false&no-bg=false&margin-w=4)
