@@ -18,5 +18,7 @@
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=Abe0770&theme=tokyonight&no-frame=false&no-bg=false&margin-w=4)
 
+<a href=#><img src="contributions.svg"></a>
+
 ---
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=abe0770&label=Profile%20views&color=0e75b6&style=flat" alt="abe0770" /> </p>
