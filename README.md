@@ -18,8 +18,6 @@
 
 ---
 
-![](https://media0.giphy.com/media/3otPorWLQJq5GmHRtu/giphy.gif)
-
 <a href=#><img src="contributions.svg"></a>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=abe0770&label=Profile%20views&color=0e75b6&style=flat" alt="abe0770" /> </p>
