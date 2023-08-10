@@ -1,4 +1,4 @@
-# Hello there 👋
+👋
 
 ## 🌐 
 <p align="left">
